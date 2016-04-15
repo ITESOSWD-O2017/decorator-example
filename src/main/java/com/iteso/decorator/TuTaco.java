@@ -7,6 +7,8 @@ import com.iteso.decorator.condiments.TortillaMaiz;
 import com.iteso.decorator.condiments.meat.Chorizo;
 import com.iteso.decorator.condiments.meat.Lengua;
 import com.iteso.decorator.condiments.meat.Pastor;
+import com.iteso.decorator.condiments.meat.Sesos;
+import com.iteso.decorator.tacos.Burrito;
 import com.iteso.decorator.tacos.Quesadilla;
 import com.iteso.decorator.tacos.TacoNormal;
 
@@ -33,10 +35,12 @@ public class TuTaco {
         System.out.println(taco.getDescription());
         System.out.println("$" + taco.cost() + " MXN");
 
-        Taco taco2 = new TacoNormal();
+        Taco taco2 = new Burrito();
 
         taco2 = new TortillaHarina(taco2);
         taco2 = new Lengua(taco2);
+        taco2 = new Sesos(taco2);
+
         taco2 = new Cilantro(taco2);
 
         System.out.println();
